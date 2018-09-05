@@ -1,0 +1,29 @@
+{
+  "name": "executable-harness",
+  "version": "0.1.0",
+  "description": "Node.js - Electron - NW.js asynchronous controller for binary executables or scripts",
+  "main": "src/executable-harness.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node tests/executable-harness-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddmitov/executable-harness.git"
+  },
+  "keywords": [
+    "asynchronous",
+    "child_process",
+    "electron",
+    "nw.js"
+  ],
+  "author": "Dimitar D. Mitov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ddmitov/executable-harness/issues"
+  },
+  "homepage": "https://github.com/ddmitov/executable-harness#readme",
+  "tonicExampleFilename": "tonic/example.js"
+}
