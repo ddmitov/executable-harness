@@ -1,6 +1,5 @@
 executable-harness
 --------------------------------------------------------------------------------
-[![Travis CI Build Status](https://travis-ci.org/ddmitov/executable-harness.svg?branch=master)](https://travis-ci.org/ddmitov/executable-harness)
 [![Build status](https://ci.appveyor.com/api/projects/status/2g0mp1ubldehaab3?svg=true)](https://ci.appveyor.com/project/ddmitov/executable-harness)
 [![Inline docs](http://inch-ci.org/github/ddmitov/executable-harness.svg?branch=master)](http://inch-ci.org/github/ddmitov/executable-harness)  
 [![Coverity Scan Build Status](https://scan.coverity.com/projects/16693/badge.svg)](https://scan.coverity.com/projects/ddmitov-executable-harness)
