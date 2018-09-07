@@ -35,25 +35,23 @@ executableHarness.startExecutable(test);
 All settings of an executable or script executed by executable-harness are stored in a JavaScript object with an arbitrary name and the following object properties:  
 
 * **executable**  
-  ``String`` for the filename of a binary executable or script:
+  ``String`` for the filename of a binary executable or script:  
   either filename on PATH or full pathname  
   *This object property is mandatory.*  
 
   ```javascript
   test.executable = "/full/path/to/executable";
   ```
-
   or
-
   ```javascript
   test.executable = "executable-on-path";
   ```
 
   There are two possible configurations when a script has to be started:  
 
-  1. The ``executable`` object property points to the appropriate script interpreter and the ``executableArguments`` object property holds the script full pathname. In this case, the script is executed by the selected script interpreter regardless of the operating system.  
+  * The ``executable`` object property points to the appropriate script interpreter and the ``executableArguments`` object property holds the script full pathname. In this case, the script is executed by the selected script interpreter regardless of the operating system.  
 
-  2. The ``executable`` object property holds the script full pathname and the script is executed by the default interpreter of the operating system, if any.
+  * The ``executable`` object property holds the script full pathname and the script is executed by the default interpreter of the operating system, if any.
 
 * **stdoutFunction**  
   will be executed every time data is available on STDOUT  
