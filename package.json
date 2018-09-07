@@ -1,13 +1,13 @@
 {
   "name": "executable-harness",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Node.js - Electron - NW.js asynchronous controller for binary executables or scripts",
   "main": "src/executable-harness.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "node tests/executable-harness-test.js"
+    "test": "node tests/executable-harness-tests.js"
   },
   "repository": {
     "type": "git",
