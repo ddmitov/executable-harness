@@ -1,9 +1,6 @@
-"use strict";
-
 const executableHarness = require("executable-harness");
 
 let test = {};
-
 test.executable = "node";
 
 test.executableArguments = [];

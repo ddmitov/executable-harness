@@ -1,15 +1,16 @@
 executable-harness
 --------------------------------------------------------------------------------
-<!-- [![Travis CI Build Status](https://travis-ci.org/ddmitov/executable-harness.svg?branch=master)](https://travis-ci.org/ddmitov/executable-harness)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ddmitov/executable-harness?branch=master&svg=true)](https://ci.appveyor.com/project/ddmitov/executable-harness)
+[![Travis CI Build Status](https://travis-ci.org/ddmitov/executable-harness.svg?branch=master)](https://travis-ci.org/ddmitov/executable-harness)
+[![Build status](https://ci.appveyor.com/api/projects/status/2g0mp1ubldehaab3?svg=true)](https://ci.appveyor.com/project/ddmitov/executable-harness)
 [![Inline docs](http://inch-ci.org/github/ddmitov/executable-harness.svg?branch=master)](http://inch-ci.org/github/ddmitov/executable-harness)  
-[![Coverity Scan Build Status](https://scan.coverity.com/projects//badge.svg)](https://scan.coverity.com/projects/ddmitov-executable-harness)
-[![Snyk Status](https://snyk.io/test/github/ddmitov/executable-harness/badge.svg)](https://snyk.io/test/github/ddmitov/executable-harness)  
+[![Coverity Scan Build Status](https://scan.coverity.com/projects/16693/badge.svg)](https://scan.coverity.com/projects/ddmitov-executable-harness)
+[![Known Vulnerabilities](https://snyk.io/test/github/ddmitov/executable-harness/badge.svg?targetFile=package.json)](https://snyk.io/test/github/ddmitov/executable-harness?targetFile=package.json)  
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2a42ef32427f4d18837d6a3251d9d14e)](https://www.codacy.com/app/ddmitov/executable-harness?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ddmitov/executable-harness&amp;utm_campaign=Badge_Grade)
+[![Maintainability](https://api.codeclimate.com/v1/badges/8022196887baf15d2ef9/maintainability)](https://codeclimate.com/github/ddmitov/executable-harness/maintainability)  
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/)](https://www.codacy.com/app/ddmitov/executable-harness?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ddmitov/executable-harness&amp;utm_campaign=Badge_Grade)
-[![Maintainability](https://api.codeclimate.com/v1/badges//maintainability)](https://codeclimate.com/github/ddmitov/executable-harness/maintainability) -->
+[Node.js](http://nodejs.org/) - [Electron](http://electron.atom.io/) - [NW.js](http://nwjs.io/) asynchronous controller for binary executables or scripts  
 
-[Node.js](http://nodejs.org/) - [Electron](http://electron.atom.io/) - [NW.js](http://nwjs.io/) asynchronous controller for binary executables or scripts
+executable-harness is a successor of the [camel-harness](https://www.npmjs.com/package/camel-harness) NPM package by the same author.
 
 ## Quick Start
 ``npm install executable-harness``  
@@ -27,20 +28,32 @@ test.stdoutFunction = function (stdout) {
 executableHarness.startExecutable(test);
 ```
 
-## Core Dependency
+## Single Dependency
 ``child_process``
 
 ## API
-All settings of an executable executed by executable-harness are stored in a JavaScript object with an arbitrary name and the following object properties:  
+All settings of an executable or script executed by executable-harness are stored in a JavaScript object with an arbitrary name and the following object properties:  
 
 * **executable**  
-  ``String`` for a filename of a binary executable or script:
-  either filename on PATH or full pathname
+  ``String`` for the filename of a binary executable or script:
+  either filename on PATH or full pathname  
   *This object property is mandatory.*  
 
   ```javascript
   test.executable = "/full/path/to/executable";
   ```
+
+  or
+
+  ```javascript
+  test.executable = "executable-on-path";
+  ```
+
+  There are two possible configurations when a script has to be started:  
+
+  1. The ``executable`` object property points to the appropriate script interpreter and the ``executableArguments`` object property holds the script full pathname. In this case, the script is executed by the selected script interpreter regardless of the operating system.  
+
+  2. The ``executable`` object property holds the script full pathname and the script is executed by the default interpreter of the operating system, if any.
 
 * **stdoutFunction**  
   will be executed every time data is available on STDOUT  
@@ -92,7 +105,7 @@ All settings of an executable executed by executable-harness are stored in a Jav
   ```
 
 * **executableArguments**  
-  ``Array`` for executable arguments  
+  ``Array`` for command-line arguments  
 
   ```javascript
   test.executableArguments = [];
@@ -105,7 +118,7 @@ All settings of an executable executed by executable-harness are stored in a Jav
   Click [here](https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options) for a full list of all available ``child_process`` options.
 
 * **options.cwd**  
-  ``String`` for a new executable current working directory  
+  ``String`` for a new current working directory of the selected executable  
 
   ```javascript
   test.options = {};
@@ -113,7 +126,7 @@ All settings of an executable executed by executable-harness are stored in a Jav
   ```
 
 * **options.env**  
-  ``Object`` for a new executable environment  
+  ``Object`` for a new environment of the selected executable  
 
   Executable environment with an inherited PATH and a new variable:  
 
@@ -152,7 +165,7 @@ All settings of an executable executed by executable-harness are stored in a Jav
   ``String`` or ``Function`` supplying user data as its return value.  
   ``inputData`` is written on executable STDIN.  
 
-  ``inputData`` function example with no dependencies:  
+  ``inputData`` function with no dependencies:  
 
   ```javascript
   test.inputData = function () {
@@ -162,7 +175,7 @@ All settings of an executable executed by executable-harness are stored in a Jav
   ```
 
 ## Interactive Executables or Scripts
-executable-harness can also start and communicate with interactive executables or scripts having their own event loops and capable of repeatedly receiving STDIN input. Use the following code to send data to an interactive executable waiting for input on STDIN:
+executable-harness can also start and communicate with interactive executables or scripts having their own event loops and capable of repeatedly receiving STDIN input. Use the following code to send data to an interactive executable or script waiting for input on STDIN:
 
 ```javascript
 let data = document.getElementById("data-input").value;
