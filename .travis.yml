@@ -1,13 +1,13 @@
 language: node_js
 
 node_js:
-  - "7.3.0"
+  - "8.11.4"
 
 os:
   - linux
 
 env:
-  - PATH=$PATH:/home/travis/.nvm/versions/node/v7.3.0/bin/
+  - PATH=$PATH:/home/travis/.nvm/versions/node/v8.11.4/bin/
 
 sudo: required
 
