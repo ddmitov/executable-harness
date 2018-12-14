@@ -1,5 +1,5 @@
-executable-harness
---------------------------------------------------------------------------------
+# executable-harness
+
 [![Build status](https://ci.appveyor.com/api/projects/status/2g0mp1ubldehaab3?svg=true)](https://ci.appveyor.com/project/ddmitov/executable-harness)
 [![Inline docs](http://inch-ci.org/github/ddmitov/executable-harness.svg?branch=master)](http://inch-ci.org/github/ddmitov/executable-harness)  
 [![Coverity Scan Build Status](https://scan.coverity.com/projects/16693/badge.svg)](https://scan.coverity.com/projects/ddmitov-executable-harness)
@@ -9,9 +9,8 @@ executable-harness
 
 [Node.js](http://nodejs.org/) - [Electron](http://electron.atom.io/) - [NW.js](http://nwjs.io/) asynchronous controller for binary executables or scripts  
 
-executable-harness is a successor of the [camel-harness](https://www.npmjs.com/package/camel-harness) NPM package by the same author.
-
 ## Quick Start
+
 ``npm install executable-harness``  
 
 ```javascript
@@ -28,9 +27,11 @@ executableHarness.startExecutable(test);
 ```
 
 ## Single Dependency
+
 ``child_process``
 
 ## API
+
 All settings of an executable or script executed by executable-harness are stored in a JavaScript object with an arbitrary name and the following object properties:  
 
 * **executable**  
@@ -41,7 +42,9 @@ All settings of an executable or script executed by executable-harness are store
   ```javascript
   test.executable = "/full/path/to/executable";
   ```
+
   or
+
   ```javascript
   test.executable = "executable-on-path";
   ```
@@ -172,6 +175,7 @@ All settings of an executable or script executed by executable-harness are store
   ```
 
 ## Interactive Executables or Scripts
+
 executable-harness can also start and communicate with interactive executables or scripts having their own event loops and capable of repeatedly receiving STDIN input. Use the following code to send data to an interactive executable or script waiting for input on STDIN:
 
 ```javascript
@@ -182,5 +186,6 @@ test.executableHandler.stdin.write(data);
 ## [Credits](./CREDITS.md)
 
 ## [License](./LICENSE.md)
+
 MIT 2018  
 Dimitar D. Mitov  
