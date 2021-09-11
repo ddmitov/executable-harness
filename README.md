@@ -1,9 +1,8 @@
 # executable-harness
 
 [![Build status](https://ci.appveyor.com/api/projects/status/2g0mp1ubldehaab3?svg=true)](https://ci.appveyor.com/project/ddmitov/executable-harness)
-[![Inline docs](http://inch-ci.org/github/ddmitov/executable-harness.svg?branch=master)](http://inch-ci.org/github/ddmitov/executable-harness)  
+[![Inline docs](http://inch-ci.org/github/ddmitov/executable-harness.svg?branch=master)](http://inch-ci.org/github/ddmitov/executable-harness)
 [![Known Vulnerabilities](https://snyk.io/test/github/ddmitov/executable-harness/badge.svg?targetFile=package.json)](https://snyk.io/test/github/ddmitov/executable-harness?targetFile=package.json)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2a42ef32427f4d18837d6a3251d9d14e)](https://www.codacy.com/app/ddmitov/executable-harness?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ddmitov/executable-harness&amp;utm_campaign=Badge_Grade)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8022196887baf15d2ef9/maintainability)](https://codeclimate.com/github/ddmitov/executable-harness/maintainability)  
 
 [Node.js](http://nodejs.org/) - [Electron](http://electron.atom.io/) - [NW.js](http://nwjs.io/) asynchronous controller for binary executables or scripts  
