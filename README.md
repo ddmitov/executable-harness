@@ -1,6 +1,5 @@
 # executable-harness
 
-[![Inline docs](http://inch-ci.org/github/ddmitov/executable-harness.svg?branch=master)](http://inch-ci.org/github/ddmitov/executable-harness)
 [![Known Vulnerabilities](https://snyk.io/test/github/ddmitov/executable-harness/badge.svg?targetFile=package.json)](https://snyk.io/test/github/ddmitov/executable-harness?targetFile=package.json)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8022196887baf15d2ef9/maintainability)](https://codeclimate.com/github/ddmitov/executable-harness/maintainability)  
 
